@@ -6,45 +6,60 @@
   <title>Wai Wong Research Group</title>
 
   <style>
+    :root {
+      --primary: #0b2341;
+      --secondary: #16436f;
+      --light-bg: #f6f8fb;
+      --border: #d9dfe7;
+      --text: #222;
+      --muted: #5f6b76;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      color: #222;
+      color: var(--text);
       line-height: 1.7;
       background: #ffffff;
       font-size: 16px;
     }
 
     header {
-      background: #0b2341;
+      background: linear-gradient(135deg, #0b2341, #16436f);
       color: white;
-      padding: 42px 12%;
+      padding: 56px 12%;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 18px;
+      max-width: 900px;
     }
 
     nav {
-      background: #f4f4f4;
+      background: #ffffff;
       padding: 16px 12%;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     nav a {
-      margin-right: 28px;
+      margin-right: 26px;
       text-decoration: none;
-      color: #0b2341;
+      color: var(--primary);
       font-weight: 600;
       font-size: 15px;
     }
@@ -54,25 +69,25 @@
     }
 
     main {
-      max-width: 1000px;
-      margin: 48px auto;
+      max-width: 1100px;
+      margin: 50px auto;
       padding: 0 32px;
     }
 
     section {
-      margin-bottom: 56px;
+      margin-bottom: 64px;
     }
 
     h2 {
-      color: #0b2341;
-      font-size: 26px;
-      border-bottom: 2px solid #ddd;
+      color: var(--primary);
+      font-size: 28px;
+      border-bottom: 2px solid var(--border);
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     h3 {
-      color: #0b2341;
+      color: var(--primary);
       font-size: 20px;
       margin-top: 24px;
       margin-bottom: 10px;
@@ -82,59 +97,112 @@
       margin-bottom: 16px;
     }
 
+    a {
+      color: var(--secondary);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
     li {
       margin-bottom: 8px;
     }
 
-    .highlight-box {
-      background: #f7f9fb;
-      border-left: 4px solid #0b2341;
-      padding: 18px 22px;
-      margin-top: 20px;
+    .hero-box {
+      background: var(--light-bg);
+      border-left: 5px solid var(--primary);
+      padding: 22px 26px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      background: #ffffff;
       margin-bottom: 20px;
     }
 
-    .people-card {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 18px 22px;
-      margin-bottom: 18px;
-      background: #fafafa;
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
     }
 
-    .people-card h3 {
+    .muted {
+      color: var(--muted);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .profile-panel {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .profile-panel h3 {
       margin-top: 0;
-      margin-bottom: 6px;
     }
 
     .publication {
-      margin-bottom: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e7ebf0;
+    }
+
+    .publication:last-child {
+      border-bottom: none;
     }
 
     .publication-title {
-      font-weight: bold;
-      color: #0b2341;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e9f0f7;
+      color: var(--primary);
+      border-radius: 16px;
+      padding: 4px 10px;
+      margin: 4px 6px 4px 0;
+      font-size: 14px;
     }
 
     .news-item {
-      margin-bottom: 12px;
+      border-left: 4px solid var(--secondary);
+      padding-left: 16px;
+      margin-bottom: 16px;
     }
 
     footer {
       background: #f2f2f2;
-      padding: 28px 12%;
+      padding: 30px 12%;
       font-size: 14px;
       color: #555;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid var(--border);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 850px) {
       header {
-        padding: 32px 24px;
+        padding: 38px 24px;
       }
 
       header h1 {
-        font-size: 28px;
+        font-size: 30px;
       }
 
       header p {
@@ -147,17 +215,22 @@
 
       nav a {
         display: inline-block;
-        margin-right: 18px;
+        margin-right: 16px;
         margin-bottom: 8px;
       }
 
       main {
-        margin: 32px auto;
+        margin: 34px auto;
         padding: 0 24px;
       }
 
+      .two-column,
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
       h2 {
-        font-size: 23px;
+        font-size: 24px;
       }
     }
   </style>
@@ -167,7 +240,10 @@
 
   <header>
     <h1>Wai Wong Research Group</h1>
-    <p>Transportation Engineering | University of Canterbury</p>
+    <p>
+      Transportation Engineering | Department of Civil and Natural Resources Engineering |
+      University of Canterbury, New Zealand
+    </p>
   </header>
 
   <nav>
@@ -175,6 +251,7 @@
     <a href="#research">Research</a>
     <a href="#people">People</a>
     <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -182,111 +259,395 @@
   <main>
 
     <section id="about">
-      <h2>About Us</h2>
+      <h2>About the Group</h2>
 
-      <p>
-        The Wai Wong Research Group conducts research on transportation engineering,
-        traffic flow theory, intelligent transportation systems, connected and automated vehicles,
-        and transport safety.
-      </p>
+      <div class="profile-grid">
+        <div class="profile-panel">
+          <h3>Principal Investigator</h3>
+          <p><strong>Dr. Wai Wong</strong></p>
+          <p>Lecturer in Transportation Engineering</p>
+          <p>
+            Department of Civil and Natural Resources Engineering<br>
+            University of Canterbury, New Zealand
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:wai.wong@canterbury.ac.nz">wai.wong@canterbury.ac.nz</a>
+          </p>
+          <p>
+            <strong>Profile:</strong>
+            <a href="https://profiles.canterbury.ac.nz/Wai-Wong" target="_blank">
+              University of Canterbury Profile
+            </a>
+          </p>
+          <p>
+            <strong>ORCID:</strong>
+            <a href="https://orcid.org/0000-0001-8150-3280" target="_blank">
+              0000-0001-8150-3280
+            </a>
+          </p>
+        </div>
 
-      <p>
-        Our work combines mathematical modelling, simulation, data-driven analysis,
-        and empirical validation to understand and improve the performance, reliability,
-        and safety of transportation systems.
-      </p>
+        <div>
+          <p>
+            The Wai Wong Research Group conducts research at the intersection of
+            transportation engineering and emerging transport technologies. The group focuses
+            on smart transportation systems, connected and automated vehicles, big data analytics,
+            intelligent transportation systems, traffic signal optimisation, traffic flow theory,
+            and safety science.
+          </p>
 
-      <div class="highlight-box">
-        <strong>Research focus:</strong>
-        modelling, estimation, and evaluation of emerging transportation systems
-        under uncertainty, partial observability, and mixed traffic conditions.
+          <p>
+            Our work combines mathematical modelling, simulation, empirical data analysis,
+            and statistical estimation to support the development of reliable, scalable,
+            and safety-conscious solutions for next-generation transportation systems.
+          </p>
+
+          <div class="hero-box">
+            <strong>Research focus:</strong>
+            modelling, estimation, optimisation, and evaluation of transportation systems
+            under uncertainty, partial observability, and mixed traffic conditions.
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="research">
       <h2>Research Areas</h2>
 
-      <h3>Traffic Flow Theory and Modelling</h3>
       <p>
-        We study the dynamics of traffic flow using analytical models, simulation,
-        and empirical data, with particular interest in congestion formation,
-        queue evolution, and network performance.
+        The group works on both theoretical and applied problems in transportation engineering,
+        with particular emphasis on emerging sensing technologies, connected vehicle data,
+        traffic operations, and safety evaluation.
       </p>
 
-      <h3>Connected and Automated Vehicles</h3>
-      <p>
-        We investigate how connected and automated vehicles can improve traffic
-        observability, safety, efficiency, and control under mixed traffic environments.
-      </p>
+      <div>
+        <span class="tag">Connected and automated vehicles</span>
+        <span class="tag">Traffic flow theory</span>
+        <span class="tag">Intelligent transportation systems</span>
+        <span class="tag">Traffic signal optimisation</span>
+        <span class="tag">Big data analytics</span>
+        <span class="tag">Safety science</span>
+        <span class="tag">Probe vehicle data</span>
+        <span class="tag">Signalized intersections</span>
+      </div>
 
-      <h3>Signalized Intersection Operations</h3>
-      <p>
-        We develop methods for estimating, reconstructing, and evaluating traffic
-        states at signalized intersections using partial observations and emerging
-        sensing technologies.
-      </p>
+      <div class="two-column">
+        <div class="card">
+          <h3>Connected and Automated Vehicles</h3>
+          <p>
+            We study how connected and automated vehicles can improve traffic observability,
+            operational efficiency, and safety in mixed traffic systems.
+          </p>
+        </div>
 
-      <h3>Traffic Safety and Human Factors</h3>
-      <p>
-        We examine driving behaviour, interaction patterns, lane-changing behaviour,
-        and safety-related performance measures in complex traffic environments.
-      </p>
+        <div class="card">
+          <h3>Traffic Flow Theory</h3>
+          <p>
+            We develop and evaluate models of traffic flow dynamics, congestion formation,
+            queue evolution, and network-level traffic performance.
+          </p>
+        </div>
 
-      <h3>Data-driven Transportation Systems</h3>
-      <p>
-        We use trajectory data, simulation outputs, connected vehicle observations,
-        and statistical learning methods to support transportation modelling and evaluation.
-      </p>
+        <div class="card">
+          <h3>Traffic Signal Optimisation</h3>
+          <p>
+            We investigate signal control and optimisation methods for intersections and
+            urban traffic networks under uncertain and partially observed traffic conditions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Traffic Safety and Human Factors</h3>
+          <p>
+            We examine driving behaviour, interaction patterns, safety risks, and performance
+            measures using trajectory data and statistical modelling.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="people">
       <h2>People</h2>
 
-      <div class="people-card">
-        <h3>Prof. Wai Wong</h3>
+      <div class="card">
+        <h3>Dr. Wai Wong</h3>
         <p><strong>Role:</strong> Principal Investigator</p>
-        <p><strong>Research interests:</strong> Transportation engineering, traffic flow theory, intelligent transportation systems.</p>
-        <p><strong>Email:</strong> To be updated</p>
+        <p><strong>Position:</strong> Lecturer in Transportation Engineering, University of Canterbury</p>
+        <p>
+          <strong>Research interests:</strong> connected and autonomous vehicles, big data analytics,
+          intelligent transportation systems, traffic signal optimisation, traffic flow theory,
+          and safety science.
+        </p>
+
+        <h3>Education</h3>
+        <ul>
+          <li>Ph.D. in Transportation and Traffic Engineering, The University of Hong Kong, 2017</li>
+          <li>B.Eng. in Civil Engineering with First Class Honours, The University of Hong Kong, 2013</li>
+        </ul>
+
+        <h3>Employment History</h3>
+        <ul>
+          <li>2022–present: Lecturer, University of Canterbury, New Zealand</li>
+          <li>2021–2022: Assistant Engineer, Highways Department, HKSAR</li>
+          <li>2021: Lecturer, University of Canterbury, New Zealand</li>
+          <li>2019–2021: Civil Engineer Graduate, Highways Department, HKSAR</li>
+          <li>2019: Post-doctoral Research Fellow, The University of Hong Kong</li>
+          <li>2018–2019: Post-doctoral Research Fellow, University of Michigan</li>
+        </ul>
       </div>
 
-      <div class="people-card">
+      <div class="card">
         <h3>Qiruo Yan</h3>
         <p><strong>Role:</strong> PhD Student</p>
-        <p><strong>Research interests:</strong> Connected and automated vehicles, penetration rate estimation, traffic uncertainty, signalized intersections.</p>
+        <p>
+          <strong>Research interests:</strong> connected and automated vehicles, penetration rate
+          estimation, traffic uncertainty, signalized intersections, and partial traffic observability.
+        </p>
         <p><strong>Email:</strong> To be updated</p>
       </div>
 
-      <div class="people-card">
-        <h3>Master Students</h3>
-        <p>To be updated.</p>
-      </div>
-
-      <div class="people-card">
-        <h3>Alumni</h3>
-        <p>To be updated.</p>
+      <div class="card">
+        <h3>Students and Alumni</h3>
+        <p>Additional students, collaborators, and alumni will be added here.</p>
       </div>
     </section>
 
     <section id="publications">
-      <h2>Selected Publications</h2>
+      <h2>Journal Publications</h2>
 
       <div class="publication">
         <p>
           <span class="publication-title">
-            Estimation of connected and automated vehicle penetration rate under partial observability.
+            Adaptive signal control at partially connected intersections: a stochastic optimization model for uncertain vehicle arrival rates.
           </span><br>
-          Qiruo Yan, Wai Wong, and co-authors.<br>
-          <em>Working paper.</em>
+          Jia, S., Wong, S.C., and Wong, W. (2025).
+          <em>Transportation Research Part B: Methodological</em>, 193, 103161.
         </p>
       </div>
 
       <div class="publication">
         <p>
           <span class="publication-title">
-            Additional publications will be added here.
+            Modeling residual-vehicle effects on uncertainty estimation of the connected vehicle penetration rate.
           </span><br>
-          To be updated.
+          Jia, S., Wong, S.C., and Wong, W. (2024).
+          <em>Transportation Research Part C: Emerging Technologies</em>, 168, 104825.
         </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Real-time urban traffic monitoring using transit buses as probes.
+          </span><br>
+          Jiang, S., Sun, Y., Wong, W., Xu, Y., and Zhao, X. (2024).
+          <em>Transportation Research Record</em>, 03611981241260708.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Fusion of multi-resolution data for estimating speed-density relationships.
+          </span><br>
+          Bai, L., Wong, W., Xu, P., Liu, P., Chow, A.H.F., Lam, W.H.K.,
+          Ma, W., Han, Y., and Wong, S.C. (2024).
+          <em>Transportation Research Part C: Emerging Technologies</em>, 165, 104742.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Bicycle flow dynamics of cyclist loading and unloading processes at bottlenecks.
+          </span><br>
+          Guo, N., Wong, W., Jiang, R., Wong, S.C., Hao, Q.Y., and Wu, C.Y. (2024).
+          <em>Transportation Science</em>, 58(2), 279–556.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Uncertainty estimation of connected vehicle penetration rate.
+          </span><br>
+          Jia, S., Wong, S.C., and Wong, W. (2023).
+          <em>Transportation Science</em>, 57(5), 1160–1176.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            On the cybersecurity of traffic signal control system with connected vehicles.
+          </span><br>
+          Feng, Y., Huang, S., Wong, W., Chen, Q.A., Mao, Z.M., and Liu, H.X. (2022).
+          <em>IEEE Transactions on Intelligent Transportation Systems</em>, 23(9), 16267–16279.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Network topological effects on the macroscopic fundamental diagram.
+          </span><br>
+          Wong, W., Wong, S.C., and Liu, H.X. (2021).
+          <em>Transportmetrica B: Transport Dynamics</em>, 9(1), 376–398.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Maximum likelihood estimation of probe vehicle penetration rates and queue length distributions from probe vehicle data.
+          </span><br>
+          Zhao, Y., Wong, W., Zheng, J., and Liu, H.X. (2021).
+          <em>IEEE Transactions on Intelligent Transportation Systems</em>, 23(7), 7628–7636.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            On the estimation of connected vehicle penetration rate based on single-source connected vehicle data.
+          </span><br>
+          Wong, W., Shen, S., Zhao, Y., and Liu, H.X. (2019).
+          <em>Transportation Research Part B: Methodological</em>, 126, 169–191.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Various methods for queue length and traffic volume estimation using probe vehicle trajectories.
+          </span><br>
+          Zhao, Y., Zheng, J., Wong, W., Wang, X., Meng, Y., and Liu, H.X. (2019).
+          <em>Transportation Research Part C: Emerging Technologies</em>, 107, 70–91.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Estimation of queue lengths, probe vehicle penetration rates, and traffic volumes at signalized intersections using probe vehicle trajectories.
+          </span><br>
+          Zhao, Y., Zheng, J., Wong, W., Wang, X., Meng, Y., and Liu, H.X. (2019).
+          <em>Transportation Research Record</em>, 2673(11), 660–670.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Bootstrap standard error estimations of nonlinear transport models based on linearly projected data.
+          </span><br>
+          Wong, W. and Wong, S.C. (2019).
+          <em>Transportmetrica A: Transport Science</em>, 15(2), 602–630.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Unbiased estimation methods of nonlinear transport models based on linearly projected data.
+          </span><br>
+          Wong, W. and Wong, S.C. (2019).
+          <em>Transportation Science</em>, 53(3), 665–682.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Gas dynamic analogous exposure approach to interaction intensity in multiple-vehicle crash analysis: Case study of crashes involving taxis.
+          </span><br>
+          Meng, F., Wong, W., Wong, S.C., Pei, X., Li, Y.C., and Huang, H. (2017).
+          <em>Analytic Methods in Accident Research</em>, 16, 90–103.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Estimation of scaling factors for traffic counts based on stationary and mobile sources of data.
+          </span><br>
+          Meng, F., Wong, S.C., Wong, W., and Li, Y.C. (2017).
+          <em>International Journal of Intelligent Transportation Systems Research</em>, 15(3), 180–191.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Evaluation of the impact of traffic incidents using GPS data.
+          </span><br>
+          Wong, W. and Wong, S.C. (2016).
+          <em>Proceedings of the Institution of Civil Engineers - Transport</em>, 169(3), 148–162.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Network topological effects on the macroscopic Bureau of Public Roads function.
+          </span><br>
+          Wong, W. and Wong, S.C. (2016).
+          <em>Transportmetrica A: Transport Science</em>, 12(3), 272–296.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Biased standard error estimations in transport model calibration due to heteroscedasticity arising from the variability of linear data projection.
+          </span><br>
+          Wong, W. and Wong, S.C. (2016).
+          <em>Transportation Research Part B: Methodological</em>, 88, 72–92.
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Systematic bias in transport model calibration arising from the variability of linear data projection.
+          </span><br>
+          Wong, W. and Wong, S.C. (2015).
+          <em>Transportation Research Part B: Methodological</em>, 126, 169–191.
+        </p>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards, Memberships, and Services</h2>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>Selected Awards and Honours</h3>
+          <ul>
+            <li>International Workshop on Automotive and Autonomous Vehicle Security Best Paper Award, 2021</li>
+            <li>HKSTS Outstanding Dissertation Paper Award cum Gordon Newell Memorial Prize, 2018</li>
+            <li>International Experience for Research Postgraduate Students Award, The University of Hong Kong, 2017</li>
+            <li>Outstanding Teaching Assistant Award, The University of Hong Kong, 2017</li>
+            <li>Outstanding Teaching Assistant Award, The University of Hong Kong, 2016</li>
+            <li>The Chartered Institution of Highways & Transportation Student Paper Award, 2013</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Professional Memberships</h3>
+          <ul>
+            <li>Member, Transportation Group, Engineering New Zealand, 2023–present</li>
+            <li>Chartered Engineer, Engineering Council, United Kingdom, 2022–present</li>
+            <li>Member of Institution of Civil Engineers, United Kingdom, 2022–present</li>
+          </ul>
+
+          <h3>Professional Services</h3>
+          <ul>
+            <li>Session Chair, The 28th International Conference of Hong Kong Society for Transportation Studies, 2024</li>
+            <li>Co-chair, Emergency Traffic Control Technical Committee, World Transport Congress, 2023</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -298,7 +659,7 @@
       </div>
 
       <div class="news-item">
-        <p><strong>June 2026:</strong> Research updates and selected publications will be added soon.</p>
+        <p><strong>June 2026:</strong> Research areas, publications, and group information have been added to the website.</p>
       </div>
     </section>
 
@@ -306,17 +667,34 @@
       <h2>Contact</h2>
 
       <p>
+        <strong>Dr. Wai Wong</strong><br>
+        Lecturer in Transportation Engineering<br>
         Department of Civil and Natural Resources Engineering<br>
         University of Canterbury<br>
         Christchurch, New Zealand
       </p>
 
       <p>
-        <strong>Email:</strong> To be updated
+        <strong>Email:</strong>
+        <a href="mailto:wai.wong@canterbury.ac.nz">wai.wong@canterbury.ac.nz</a>
       </p>
 
       <p>
-        <strong>Website:</strong>
+        <strong>University Profile:</strong>
+        <a href="https://profiles.canterbury.ac.nz/Wai-Wong" target="_blank">
+          https://profiles.canterbury.ac.nz/Wai-Wong
+        </a>
+      </p>
+
+      <p>
+        <strong>ORCID:</strong>
+        <a href="https://orcid.org/0000-0001-8150-3280" target="_blank">
+          https://orcid.org/0000-0001-8150-3280
+        </a>
+      </p>
+
+      <p>
+        <strong>Group Website:</strong>
         <a href="https://wai-wong-research-group.github.io/">
           https://wai-wong-research-group.github.io/
         </a>

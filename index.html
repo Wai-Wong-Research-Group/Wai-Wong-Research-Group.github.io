@@ -2,87 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wai Wong Research Group</title>
 
   <style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    color: #222;
-    line-height: 1.7;
-    background: #ffffff;
-    font-size: 16px;
-  }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      color: #222;
+      line-height: 1.7;
+      background: #ffffff;
+      font-size: 16px;
+    }
 
-  header {
-    background: #0b2341;
-    color: white;
-    padding: 42px 12%;
-  }
+    header {
+      background: #0b2341;
+      color: white;
+      padding: 42px 12%;
+    }
 
-  header h1 {
-    margin: 0;
-    font-size: 36px;
-    font-weight: 700;
-  }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+    }
 
-  header p {
-    margin-top: 10px;
-    font-size: 18px;
-  }
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
 
-  nav {
-    background: #f4f4f4;
-    padding: 16px 12%;
-    border-bottom: 1px solid #ddd;
-  }
+    nav {
+      background: #f4f4f4;
+      padding: 16px 12%;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  nav a {
-    margin-right: 28px;
-    text-decoration: none;
-    color: #0b2341;
-    font-weight: 600;
-    font-size: 15px;
-  }
+    nav a {
+      margin-right: 28px;
+      text-decoration: none;
+      color: #0b2341;
+      font-weight: 600;
+      font-size: 15px;
+    }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  main {
-    max-width: 1000px;
-    margin: 48px auto;
-    padding: 0 32px;
-  }
+    main {
+      max-width: 1000px;
+      margin: 48px auto;
+      padding: 0 32px;
+    }
 
-  section {
-    margin-bottom: 52px;
-  }
+    section {
+      margin-bottom: 56px;
+    }
 
-  h2 {
-    color: #0b2341;
-    font-size: 26px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
+    h2 {
+      color: #0b2341;
+      font-size: 26px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
 
-  p {
-    margin-bottom: 16px;
-  }
+    h3 {
+      color: #0b2341;
+      font-size: 20px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
 
-  li {
-    margin-bottom: 8px;
-  }
+    p {
+      margin-bottom: 16px;
+    }
 
-  footer {
-    background: #f2f2f2;
-    padding: 28px 12%;
-    font-size: 14px;
-    color: #555;
-    border-top: 1px solid #ddd;
-  }
-</style>
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f7f9fb;
+      border-left: 4px solid #0b2341;
+      padding: 18px 22px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .people-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      background: #fafafa;
+    }
+
+    .people-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .publication {
+      margin-bottom: 18px;
+    }
+
+    .publication-title {
+      font-weight: bold;
+      color: #0b2341;
+    }
+
+    .news-item {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: #f2f2f2;
+      padding: 28px 12%;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 32px 24px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav {
+        padding: 14px 24px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-right: 18px;
+        margin-bottom: 8px;
+      }
+
+      main {
+        margin: 32px auto;
+        padding: 0 24px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -97,6 +175,7 @@
     <a href="#research">Research</a>
     <a href="#people">People</a>
     <a href="#publications">Publications</a>
+    <a href="#news">News</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -104,56 +183,144 @@
 
     <section id="about">
       <h2>About Us</h2>
+
       <p>
         The Wai Wong Research Group conducts research on transportation engineering,
         traffic flow theory, intelligent transportation systems, connected and automated vehicles,
         and transport safety.
       </p>
+
       <p>
         Our work combines mathematical modelling, simulation, data-driven analysis,
         and empirical validation to understand and improve the performance, reliability,
         and safety of transportation systems.
       </p>
+
+      <div class="highlight-box">
+        <strong>Research focus:</strong>
+        modelling, estimation, and evaluation of emerging transportation systems
+        under uncertainty, partial observability, and mixed traffic conditions.
+      </div>
     </section>
 
     <section id="research">
       <h2>Research Areas</h2>
-      <ul>
-        <li>Traffic flow theory and modelling</li>
-        <li>Connected and automated vehicles</li>
-        <li>Signalized intersection operations</li>
-        <li>Traffic safety and human factors</li>
-        <li>Data-driven transportation systems</li>
-      </ul>
+
+      <h3>Traffic Flow Theory and Modelling</h3>
+      <p>
+        We study the dynamics of traffic flow using analytical models, simulation,
+        and empirical data, with particular interest in congestion formation,
+        queue evolution, and network performance.
+      </p>
+
+      <h3>Connected and Automated Vehicles</h3>
+      <p>
+        We investigate how connected and automated vehicles can improve traffic
+        observability, safety, efficiency, and control under mixed traffic environments.
+      </p>
+
+      <h3>Signalized Intersection Operations</h3>
+      <p>
+        We develop methods for estimating, reconstructing, and evaluating traffic
+        states at signalized intersections using partial observations and emerging
+        sensing technologies.
+      </p>
+
+      <h3>Traffic Safety and Human Factors</h3>
+      <p>
+        We examine driving behaviour, interaction patterns, lane-changing behaviour,
+        and safety-related performance measures in complex traffic environments.
+      </p>
+
+      <h3>Data-driven Transportation Systems</h3>
+      <p>
+        We use trajectory data, simulation outputs, connected vehicle observations,
+        and statistical learning methods to support transportation modelling and evaluation.
+      </p>
     </section>
 
     <section id="people">
       <h2>People</h2>
-      <p><strong>Principal Investigator:</strong> Prof. Wai Wong</p>
-      <p><strong>PhD Students:</strong> Qiruo Yan</p>
-      <p><strong>Master Students:</strong> To be updated</p>
-      <p><strong>Alumni:</strong> To be updated</p>
+
+      <div class="people-card">
+        <h3>Prof. Wai Wong</h3>
+        <p><strong>Role:</strong> Principal Investigator</p>
+        <p><strong>Research interests:</strong> Transportation engineering, traffic flow theory, intelligent transportation systems.</p>
+        <p><strong>Email:</strong> To be updated</p>
+      </div>
+
+      <div class="people-card">
+        <h3>Qiruo Yan</h3>
+        <p><strong>Role:</strong> PhD Student</p>
+        <p><strong>Research interests:</strong> Connected and automated vehicles, penetration rate estimation, traffic uncertainty, signalized intersections.</p>
+        <p><strong>Email:</strong> To be updated</p>
+      </div>
+
+      <div class="people-card">
+        <h3>Master Students</h3>
+        <p>To be updated.</p>
+      </div>
+
+      <div class="people-card">
+        <h3>Alumni</h3>
+        <p>To be updated.</p>
+      </div>
     </section>
 
     <section id="publications">
       <h2>Selected Publications</h2>
-      <ul>
-        <li>
-          Qiruo Yan, Wai Wong, and co-authors.
-          Estimation of connected and automated vehicle penetration rate under partial observability.
-          Working paper.
-        </li>
-      </ul>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Estimation of connected and automated vehicle penetration rate under partial observability.
+          </span><br>
+          Qiruo Yan, Wai Wong, and co-authors.<br>
+          <em>Working paper.</em>
+        </p>
+      </div>
+
+      <div class="publication">
+        <p>
+          <span class="publication-title">
+            Additional publications will be added here.
+          </span><br>
+          To be updated.
+        </p>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+
+      <div class="news-item">
+        <p><strong>June 2026:</strong> The Wai Wong Research Group website is under development.</p>
+      </div>
+
+      <div class="news-item">
+        <p><strong>June 2026:</strong> Research updates and selected publications will be added soon.</p>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
+
       <p>
         Department of Civil and Natural Resources Engineering<br>
         University of Canterbury<br>
         Christchurch, New Zealand
       </p>
-      <p>Email: To be updated</p>
+
+      <p>
+        <strong>Email:</strong> To be updated
+      </p>
+
+      <p>
+        <strong>Website:</strong>
+        <a href="https://wai-wong-research-group.github.io/">
+          https://wai-wong-research-group.github.io/
+        </a>
+      </p>
     </section>
 
   </main>
